@@ -3,13 +3,10 @@
 
 import PackageDescription
 
-import PackageDescription
-
 let package = Package(
-    name: "accounts",
+    name: "Accounts",
     platforms: [
-        .iOS(.v13),
-        .macOS(.v10_15)
+        .iOS(.v13)
     ],
     products: [
         .library(
@@ -19,16 +16,16 @@ let package = Package(
     ],
     dependencies: [
         // 👇 Si lo tienes en Git
-        .package(url: "https://github.com/jefherson/core-utils.git", from: "1.0.0"),
+        //.package(url: "https://github.com/jefherson/core-utils.git", from: "1.0.0"),
 
         // 👇 Si lo tienes en local mientras desarrollas
-        //.package(path: "../Core-Utils")
+        .package(path: "../CoreUtils")
     ],
     targets: [
         .target(
             name: "Accounts",
             dependencies: [
-                .product(name: "CoreUtils", package: "core-utils") // 👈 nombre exacto
+                .product(name: "CoreUtils", package: "CoreUtils") // 👈 nombre exacto
             ],
             path: "Sources"
         ),
